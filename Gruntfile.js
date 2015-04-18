@@ -8,10 +8,10 @@ module.exports = function(grunt) {
 			'<%= grunt.template.today("yyyy-mm-dd") %> */'
 		},
 		concat_sourcemap : {
-		'build/epub_no_underscore.js': ['<banner>', 'libs/rsvp/rsvp.js', 'src/*.js'],
-		'build/epub.js': ['<banner>', 'libs/underscore/underscore-min.js', 'libs/rsvp/rsvp.js', 'src/*.js'],
-		'build/reader.js': ['<banner>', 'reader_src/reader.js', 'reader_src/controllers/*.js'],
-		'build/hooks.js': ['<banner>', 'hooks/default/*.js'],
+			'build/epub_no_underscore.js': ['<banner>', 'libs/rsvp/rsvp.js', 'src/*.js'],
+			'build/epub.js': ['<banner>', 'libs/underscore/underscore-min.js', 'libs/rsvp/rsvp.js', 'src/*.js'],
+			'build/reader.js': ['<banner>', 'reader_src/reader.js', 'reader_src/controllers/*.js'],
+			'build/hooks.js': ['<banner>', 'hooks/default/*.js']
 		},
 		uglify: {
 			my_target: {
@@ -37,15 +37,14 @@ module.exports = function(grunt) {
 					{src: 'build/hooks.min.map', dest: 'reader/js/hooks.js.map'},
 					{src: 'build/reader.js.map', dest: 'reader/js/hooks.js.map'},
 					{src: 'build/libs/zip.min.js', dest: 'reader/js/libs/zip.min.js'},
-					// {src: 'build/libs/zip.min.js', dest: 'reader/js/libs/zip.min.map'},
 					{src: 'libs/jquery/jquery-2.1.0.min.js', dest:'reader/js/libs/jquery-2.1.0.min.js'},
-				  {src: 'libs/screenfull.min.js', dest: 'reader/js/libs/screenfull.min.js'},
+					{src: 'libs/screenfull.min.js', dest: 'reader/js/libs/screenfull.min.js'},
 					{src: 'reader_src/plugins/search.js', dest: 'reader/js/plugins/search.js'},
 					{src: 'reader_src/plugins/hypothesis.js', dest: 'reader/js/plugins/hypothesis.js'},
 					{src: 'hooks/extensions/highlight.js', dest: 'reader/js/hooks/extensions/highlight.js'}
 		
 				]
-			},
+			}
 		},
 		jshint: {
 			all: ['src/**/*.js'],//, 'reader/**/*.js']
