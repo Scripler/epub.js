@@ -90,10 +90,11 @@ EPUBJS.Parser.prototype.packageContents = function(packageXml, baseUrl){
 	spineNodeIndex = Array.prototype.indexOf.call(spineNode.parentNode.childNodes, spineNode);
 	
 	spine = parse.spine(spineNode, manifest);
-	
+
 	spineIndexByURL = {};
 	spine.forEach(function(item){
 		spineIndexByURL[item.href] = item.index;
+		spineIndexByURL[item.id] = item.index;
 	});
 
 	metadata = parse.metadata(metadataNode);
