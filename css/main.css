@@ -127,6 +127,9 @@ body {
   font-family: arial, sans-serif;
   font-weight: bold;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 .arrow:hover {
