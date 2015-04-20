@@ -25,7 +25,9 @@ EPUBJS.reader.BookmarksController = function() {
 		listitem.classList.add('list_item');
 		
 		//-- TODO: Parse Cfi
-		link.textContent = cfi;
+		if (cfi) {
+			link.textContent = "Bookmark " + (counter + 1);
+		}
 		link.href = cfi;
 
 		link.classList.add('bookmark_link');
@@ -43,7 +45,7 @@ EPUBJS.reader.BookmarksController = function() {
 		return listitem;
 	};
 
-	this.settings.bookmarks.forEach(function(cfi) { 
+	this.settings.bookmarks.forEach(function(cfi) {
 		var bookmark = createBookmarkItem(cfi);
 		docfrag.appendChild(bookmark);
 	});
